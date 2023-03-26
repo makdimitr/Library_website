@@ -1,0 +1,64 @@
+{%extends "base.html" %} {% block title%}Home{% endblock%}
+{% block content%} 
+<h1 align="center"> <u>School Library</u></h1>
+<link rel="stylesheet" href="/static/styles.css">
+    <title>books_list</title>
+<body>
+  <div id="my_books">
+  
+    <h1>My Books</h1>
+    <table class="table">
+      <thead class="table__header">
+        <th>Name of Book</th>
+        <th>Date Lent</th>
+        <th>Return</th>
+    </thead>
+    <tbody>
+      <div id="items">
+      {% for item in user.books %}
+      <tr class="table__row" name="item" id="item">
+        <td class="table__cell">{{ item.name }}</td>
+        <td class="table__cell">{{ item.date_lent }}</td>
+        <td class="table__cell"><form method="POST" ><button type="submit" class="btn btn-danger" onclick="returnBook('{{ item.id }}')">Return</button></form></td>
+      </tr>
+      {% endfor %}
+    </div>
+    </tbody>
+    </table>
+  </div>  
+  <br>
+  <h1>List of Books</h1>
+    <table class="table">
+      <thead class="table__header">
+          <th>Name of Book</th>
+          <th>Number of Copies</th>
+          <th>Lent</th>
+      </thead>
+      <tbody>
+        <div id="items">
+        {% for item in items %}
+        {% if (user.books)|length >= 3 %}
+        <tr class="table__row" name="item" id="item">
+          <td class="table__cell" >{{ item.name }}</td>
+          <td class="table__cell">{{ item.num_of_copies }}</td>
+          <td class="table__cell"><button type="submit" disabled>Lent</button></td>
+        {% else %}
+          <tr class="table__row" name="item" id="item">
+              <td class="table__cell" >{{ item.name }}</td>
+              {% if item.num_of_copies == 0 %}
+              <td class="table__cell">{{ item.num_of_copies }}</td>
+              <td class="table__cell"><button type="submit" disabled>Lent</button></td>
+              {% else %}
+              <td class="table__cell">{{ item.num_of_copies }}</td>
+              <td class="table__cell"><form method="POST" ><button type="submit" class="item-button btn btn-primary" onclick="addBook('{{ item.id }}')" >Lent</button></form></td>
+              {% endif %}
+            </tr>
+          {% endif %}
+          {% endfor %}
+          </div>
+      </tbody>
+    </table>
+  </form>
+</body>
+
+{% endblock%}

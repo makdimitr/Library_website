@@ -1,0 +1,33 @@
+
+    [
+        {
+            "id": 1, "name":"The Bible","num_of_copies":5
+        },
+        {
+            "id":2, "name":"Quotations from Chairman Mao Tse-Tung","num_of_copies":3
+        },
+        {
+            "id":3, "name":"The Quran","num_of_copies": 1
+        },
+        {
+            "id":4 , "name":"The Lord Of The Rings","num_of_copies":4
+        },
+        {
+            "id":5, "name":"The Little Prince (Le Petit Prince)","num_of_copies":6
+        },
+        {
+            "id":6, "name":"Harry Potter and the Philosopher's Stone","num_of_copies":8
+        },
+        {
+            "id":7, "name":"Scouting for Boys","num_of_copies":10
+        },
+        {
+            "id":8, "name":"And Then There Were None","num_of_copies": 2
+        },
+        {
+            "id":9 , "name":"The Hobbit","num_of_copies":7
+        },
+        {
+            "id":10, "name":"The Dream Of The Red Chamber (Honglou Meng)","num_of_copies":1
+        }
+    ] 
